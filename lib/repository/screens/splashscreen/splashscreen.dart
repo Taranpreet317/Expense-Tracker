@@ -4,25 +4,18 @@ import 'package:flutter/material.dart';
 class Splashscreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => SplashscreenState();
+  const Splashscreen({super.key});
 }
 
 class SplashscreenState extends State<Splashscreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
       if (mounted) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(
-            builder:
-                (context) => Homescreen(
-                  expense: 0,
-                  title: "Expense Tracker",
-                  date: DateTime.now(),
-                ),
-          ),
+          MaterialPageRoute(builder: (context) => Homescreen()),
         );
       }
     });
